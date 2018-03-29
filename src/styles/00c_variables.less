@@ -1,0 +1,176 @@
+// ***************************************
+// 00c_variables.less
+// ***************************************
+
+
+// -----------------------------------------------------------------------------------------------
+// DIMENSIONS
+// -----------------------------------------------------------------------------------------------
+
+	@min-width: 320px; // overall max width
+	@max-width: 1194px; // overall max width
+
+	@width-xs-min: @min-width;
+	@width-xs-max: 479px;
+
+	@width-sm-min: 480px;
+	@width-sm-max: 767px;
+
+	@width-md-min: 768px;
+	@width-md-max: 999px;
+
+	@width-lg-min: 1000px;
+	@width-lg-max: 1200px;
+
+	@width-xl-min: 1200px;
+	@width-xl-max: @max-width;
+
+
+// -----------------------------------------------------------------------------------------------
+// GRID SYSTEM
+// -----------------------------------------------------------------------------------------------
+
+	@grid-columns: 24;
+	@grid-column-width: 4.165%;
+	@grid-gutter-width: 11px; // half of gap
+
+
+// -----------------------------------------------------------------------------------------------
+// MEDIA QUERY BREAKPOINTS (px & em)
+// -----------------------------------------------------------------------------------------------
+
+	//  XS
+
+		@break-point-xs-min-px: @width-xs-min;
+		@break-point-xs-min-em-val: ~`parseInt("@{break-point-xs-min-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-xs-min-em: ~"@{break-point-xs-min-em-val}em";
+		// Set to -px or -em
+		@break-point-xs-min: @break-point-xs-min-em;
+
+		@break-point-xs-max-px: @width-xs-max;
+		@break-point-xs-max-em-val: ~`parseInt("@{break-point-xs-max-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-xs-max-em: ~"@{break-point-xs-max-em-val}em";
+		// Set to -px or -em
+		@break-point-xs-max: @break-point-xs-max-em;
+
+
+
+	//  SM
+
+		@break-point-sm-min-px: @width-sm-min;
+		@break-point-sm-min-em-val: ~`parseInt("@{break-point-sm-min-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-sm-min-em: ~"@{break-point-sm-min-em-val}em";
+		// Set to -px or -em
+		@break-point-sm-min: @break-point-sm-min-em;
+
+		@break-point-sm-max-px: @width-sm-max;
+		@break-point-sm-max-em-val: ~`parseInt("@{break-point-sm-max-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-sm-max-em: ~"@{break-point-sm-max-em-val}em";
+		// Set to -px or -em
+		@break-point-sm-max: @break-point-sm-max-em;
+
+	
+
+	// MD
+
+		@break-point-md-min-px: @width-md-min;
+		@break-point-md-min-em-val: ~`parseInt("@{break-point-md-min-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-md-min-em: ~"@{break-point-md-min-em-val}em";
+		// Set to -px or -em
+		@break-point-md-min: @break-point-md-min-em;
+
+		@break-point-md-max-px: @width-md-max;
+		@break-point-md-max-em-val: ~`parseInt("@{break-point-md-max-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-md-max-em: ~"@{break-point-md-max-em-val}em";
+		// Set to -px or -em
+		@break-point-md-max: @break-point-md-max-em;
+
+	
+
+	// LG
+
+		@break-point-lg-min-px: @width-lg-min;
+		@break-point-lg-min-em-val: ~`parseInt("@{break-point-lg-min-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-lg-min-em: ~"@{break-point-lg-min-em-val}em";
+		// Set to -px or -em
+		@break-point-lg-min: @break-point-lg-min-em;
+
+		@break-point-lg-max-px: @width-lg-max;
+		@break-point-lg-max-em-val: ~`parseInt("@{break-point-lg-max-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-lg-max-em: ~"@{break-point-lg-max-em-val}em";
+		// Set to -px or -em
+		@break-point-lg-max: @break-point-lg-max-em;
+
+
+	// XL
+
+		@break-point-xl-min-px: @width-xl-min;
+		@break-point-xl-min-em-val: ~`parseInt("@{break-point-xl-min-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-xl-min-em: ~"@{break-point-xl-min-em-val}em";
+		// Set to -px or -em
+		@break-point-xl-min: @break-point-xl-min-em;
+
+		@break-point-xl-max-px: @width-xl-max;
+		@break-point-xl-max-em-val: ~`parseInt("@{break-point-xl-max-px}", 10) / parseInt("@{rem-base}", 10)`;
+		@break-point-xl-max-em: ~"@{break-point-xl-max-em-val}em";
+		// Set to -px or -em
+		@break-point-xl-max: @break-point-xl-max-em;
+
+
+
+
+// ***************************************
+// _vars.less
+// ***************************************
+
+// -----------------------------------------------------------------------------------------------
+// COLOR PALETTE
+// -----------------------------------------------------------------------------------------------
+
+	// Primary Palette
+
+		@color-primary: #196baf;
+
+
+	// Secondary Palette
+
+		@color-secondary: #274d69;
+
+
+	// Grey Palette
+		@color-grey-0: #000;
+		@color-grey-3: #333;
+		@color-grey-6: #666;
+		@color-grey-9: #999;
+		@color-grey-c: #ccc;
+		@color-grey-f: #fff;
+
+
+	// Text
+		@color-text: @color-secondary;
+		@color-title: @color-secondary;
+		@color-link: @color-primary;
+
+
+// -----------------------------------------------------------------------------------------------
+// FONTS
+// -----------------------------------------------------------------------------------------------
+
+	// Family
+		@font-ss: Helvetica, sans-serif;
+
+	// Sizes
+		@rem-base: 16px; // 100% browser font size
+		@font-size-base: 16px; // use .font-size(pxValue) to define font sizes
+
+	// Rhythm
+		@rhythm: 6px;
+		@line-height-base: @rhythm*3;
+
+
+
+// -----------------------------------------------------------------------------------------------
+// IMAGE PATH
+// -----------------------------------------------------------------------------------------------
+
+	@img-path: '/dist/images';

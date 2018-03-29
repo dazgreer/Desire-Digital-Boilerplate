@@ -1,0 +1,122 @@
+/***************************************
+08_layout.less
+***************************************/
+
+	.container {
+		width: 100%;
+		max-width: @break-point-xl-max-px;
+	    margin-left: auto;
+	    margin-right:auto;
+	    padding-left: 20px;
+	    padding-right: 20px; 
+	}
+
+	.content {
+	    
+	}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// ALIGNMENT
+// -----------------------------------------------------------------------------------------------
+
+	.align--left--xs {
+		@media (max-width: @break-point-xs-max) {
+			text-align: left;
+		}
+	}
+
+	.align--left--sm {
+		@media (min-width: @break-point-sm-min) and (max-width: @break-point-sm-max) {
+			text-align: left;
+		}
+	}
+
+	.align--left--md {
+		@media (min-width: @break-point-md-min) and (max-width: @break-point-md-max) {
+			text-align: left;
+		}
+	}
+
+	.align--left--lg {
+		@media (min-width: @break-point-lg-min) {
+			text-align: left;
+		}
+	}
+
+	.align--center--xs {
+		@media (max-width: @break-point-xs-max) {
+			text-align: center;
+		}
+	}
+
+	.align--center--sm {
+		@media (min-width: @break-point-sm-min) and (max-width: @break-point-sm-max) {
+			text-align: center;
+		}
+	}
+
+	.align--center--md {
+		@media (min-width: @break-point-md-min) and (max-width: @break-point-md-max) {
+			text-align: center;
+		}
+	}
+
+	.align--center--lg {
+		@media (min-width: @break-point-lg-min) {
+			text-align: center;
+		}
+	}
+
+	.align--right--xs {
+		@media (max-width: @break-point-xs-max) {
+			text-align: right;
+		}
+	}
+
+	.align--right--sm {
+		@media (min-width: @break-point-sm-min) and (max-width: @break-point-sm-max) {
+			text-align: right;
+		}
+	}
+
+	.align--right--md {
+		@media (min-width: @break-point-md-min) and (max-width: @break-point-md-max) {
+			text-align: right;
+		}
+	}
+
+	.align--right--lg {
+		@media (min-width: @break-point-lg-min) {
+			text-align: right;
+		}
+	}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// VERTICAL ALIGNMENT
+// -----------------------------------------------------------------------------------------------
+
+	.valign--top,
+	.valign--center,
+	.valign--bottom {
+		@media (min-width: @break-point-md-min) {
+			-ms-flex: 0 1 auto;
+			flex: 1;
+			display: flex;
+		}
+	}
+
+	.valign--top {
+		align-items: flex-start;
+	}
+
+	.valign--center {
+		align-items: center;
+	}
+
+	.valign--bottom {
+		align-items: flex-end;	
+	}

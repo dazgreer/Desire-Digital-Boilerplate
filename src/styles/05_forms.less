@@ -1,0 +1,504 @@
+/***************************************
+05_forms.less
+***************************************/
+
+	form {
+
+	}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// FIELDSET
+// -----------------------------------------------------------------------------------------------
+
+	fieldset {
+		padding: (@rhythm*3);
+		border: 1px solid @color-grey-c;
+
+		& + fieldset {
+			margin-top: (@rhythm*3);
+		}
+
+		p {
+			margin-top: 0;
+		}
+
+	}
+	
+
+
+// -----------------------------------------------------------------------------------------------
+// LEGEND
+// -----------------------------------------------------------------------------------------------
+
+	legend {
+		padding: @rhythm;
+		background: @color-grey-c;
+	}
+	
+
+
+// -----------------------------------------------------------------------------------------------
+// FORM ROW / FORM ELEMENT
+// -----------------------------------------------------------------------------------------------
+		
+	[class*='form-row'] {
+		
+		& + [class*='form-row'] {
+			margin-top: (@rhythm*4);
+
+			&.form-row-actions,
+			&.form-row-footer {
+				margin-top: (@rhythm*5);
+			}
+
+		}
+
+		[class*="span"] {
+			& + [class*="span"] {
+				margin-top: (@rhythm*3);
+
+				@media (min-width: @break-point-md-min) {
+					margin-top: 0;
+				}
+			}
+		}
+
+	}
+
+	[class*='form-element'] {
+		position: relative;
+
+		
+
+	}
+
+	.form-icon {
+		position: relative;
+		display: inline-block;
+
+		> i {
+			position: absolute;
+			top: 8px;
+			left: (@rhythm*2);
+			color: @color-primary;
+
+			/* delete this */
+			width:14px;
+			height: 14px;
+			background: @color-primary;
+
+
+			& + input {
+				padding-left: (@rhythm*6);
+			}
+
+		}
+	}
+		
+	
+
+
+// -----------------------------------------------------------------------------------------------
+// LABEL
+// -----------------------------------------------------------------------------------------------
+
+	label {
+		.font-size(14px);
+		.line-height(14px);
+
+		&.hidden-label {
+			[class*='form-element'] & {
+				display: none;
+			}
+		}
+
+		.form-element-block & {
+			display: block;
+			margin-bottom: (@rhythm*1.5);
+		}
+	}
+	
+
+
+// -----------------------------------------------------------------------------------------------
+// TEXT INPUT
+// -----------------------------------------------------------------------------------------------
+
+	input[type=text],
+	input[type=email],
+	input[type=search],
+	input[type=number],
+	input[type=tel],
+	input[type=url],
+	input[type=password],
+	textarea,
+	select,
+	.file, {
+		padding: @rhythm;
+		border: 1px solid @color-grey-c;
+		color: @color-grey-6;
+		.font-size(14px);
+		.line-height(14px);
+		vertical-align: middle;
+
+		transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+		&:hover {
+			border-color: @color-grey-6;
+		}
+		
+		&:focus {
+			border-color: @color-primary;
+			box-shadow: 0 0 3px @color-primary;
+		}
+
+		&[disabled] {
+			background: @color-grey-c;
+			color: @color-grey-9;
+			cursor: not-allowed;
+
+			&:hover {
+				border: 1px solid @color-grey-c;
+			}
+		}
+
+		.form-element-block & {
+			width: 100%;
+		}
+
+	}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// PLACEHOLDER
+// -----------------------------------------------------------------------------------------------
+
+	.placeholder(@color-text);
+
+
+
+// -----------------------------------------------------------------------------------------------
+// TEXTAREA
+// -----------------------------------------------------------------------------------------------
+
+	textarea {
+		min-height: 120px;
+		.line-height((@rhythm*3));
+		resize: vertical;
+		overflow: auto;
+	}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// SELECT
+// -----------------------------------------------------------------------------------------------
+
+	select {
+		padding-right: (@rhythm*6);
+		background-color: @color-grey-f;
+		background-image: url(/img/forms/select.png);
+		background-repeat: no-repeat;
+		background-position: 100% center;
+
+		&[multiple] {
+			padding-right: @rhythm;
+			background-image: none;
+		}
+
+		.lt-ie10 & {
+			padding-right: @rhythm;
+			background-image: none;
+		}
+
+		& + select {
+			margin-left: (@rhythm*1.5);
+		}
+	}
+
+	.select,
+	.select-multiple {
+		display: inline-block;
+	}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// RADIO/CHECKBOX
+// -----------------------------------------------------------------------------------------------
+
+
+	.radio-element,
+	.checkbox-element  {
+		display: inline-block;
+		position: relative;
+		width: (@rhythm*3);
+		height: (@rhythm*3);
+		vertical-align: middle;
+		background: @color-grey-f;
+
+		& + label {
+			margin-left: @rhythm;
+		}
+
+		input {
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			cursor: pointer;
+
+			& + .radio:after {
+				content:'';
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			& + .checkbox:after {	
+				content:'';
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				width: 16px;
+				height: 16px;
+			}
+
+			&:checked + .radio:after  {
+				background: @color-primary;
+			}
+
+			&:checked + .checkbox:after {
+				background: @color-primary url(/img/forms/checkbox.png) no-repeat center center;
+
+
+				@media
+					only screen and (-webkit-min-device-pixel-ratio: 2),
+					only screen and (   min--moz-device-pixel-ratio: 2),
+					only screen and (     -o-min-device-pixel-ratio: 2/1),
+					only screen and (        min-device-pixel-ratio: 2),
+					only screen and (                min-resolution: 192dpi),
+					only screen and (                min-resolution: 2dppx) { 
+				
+
+						background-image: url(/img/forms/checkbox-@x2.png);
+						background-size: 16px 16px;
+
+				}
+			}
+
+			&:hover + .radio,
+			&:hover + .checkbox {
+				border-color: @color-grey-6;
+			}
+			
+			&:focus + .radio,
+			&:focus + .checkbox {
+				border-color: @color-primary;
+				box-shadow: 0 0 3px @color-primary;
+			}
+
+			&[disabled],
+			&[readonly] {
+				cursor: not-allowed;
+
+				& + .radio,
+				& + .checkbox {
+					background: @color-grey-c;
+					color: @color-grey-9;
+				}
+
+				&:hover + .radio,
+				&:hover + .checkbox {
+					border: 1px solid @color-grey-c;
+				}
+
+			}
+
+		}
+
+		.radio,
+		.checkbox {
+			position: absolute;
+			z-index: 1;
+			display: inline-block;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			border: 1px solid @color-grey-c;
+
+			transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+		}
+
+		.lt-ie9 .radio-element input:focus + .radio,
+		.lt-ie9 .checkbox-element input:focus + .checkbox { box-shadow: none; }
+
+	}
+
+
+// -----------------------------------------------------------------------------------------------
+// FILE
+// -----------------------------------------------------------------------------------------------
+
+	
+	// DEFAULT
+
+		input[type=file] {
+			.font-size(14px);
+			.line-height(14px);
+			vertical-align: middle;
+
+			&:hover {
+				border-color: @color-grey-6;
+			}
+			
+			&:focus {
+				border-color: @color-primary;
+				box-shadow: 0 0 3px @color-primary;
+			}
+
+			&[disabled] {
+				color: @color-grey-9;
+				cursor: not-allowed;
+			}
+		}
+
+
+
+	// CUSTOM
+
+		.file-container {
+			position: relative;
+			display: inline-block;
+
+			.file {
+				display: block;
+				padding-right: (@rhythm*6);
+				background-image: url(/img/forms/file.png);
+				background-repeat: no-repeat;
+				background-position: 100% center;
+
+			}
+
+			input[type=file] {
+				position: absolute;
+				top: 0;
+				left: 0;
+				max-width: 100%;
+				height: 100%;
+				opacity: 0;
+
+				&:hover + .file {
+					border-color: @color-grey-6;
+				}
+				
+				&:focus + .file {
+					border-color: @color-primary;
+					box-shadow: 0 0 3px @color-primary;
+				}
+
+				&[disabled],
+				&[readonly] {
+					cursor: not-allowed;
+
+					& + .file {
+						background-color: @color-grey-c;
+						border-color: @color-grey-c;
+						color: @color-grey-6;
+					}
+
+				}
+				
+			}
+
+		}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// NUMBER
+// -----------------------------------------------------------------------------------------------
+		
+	.number-container {
+		position: relative;
+		display: inline-block;
+
+		span {
+			position: absolute;
+			right: 0;
+			height: 50%;
+			width: 29px;
+			background: #afb3b5 url(/img/forms/number.png) no-repeat;
+
+			&.number-up {
+				top: 0;
+				background-position: 0 100%;
+			}
+
+			&.number-down {
+				bottom: 0;
+				background-position: 100% 0;
+			}
+
+		}
+
+	}
+
+
+		
+// -----------------------------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------------------------
+		
+	input[type=submit],
+	input[type=button],
+	input[type=reset],
+	button {
+		padding: @rhythm;
+		background: @color-primary;
+		border: 1px solid @color-primary;
+		color: @color-grey-f;
+		.font-size(14px);
+		.line-height(14px);
+		cursor: pointer;
+		
+		transition: background-color 0.2s ease-in-out;
+
+		&[type=reset] {
+			background: darken(@color-primary, 10%);
+		}
+
+		&[disabled] {
+			background: @color-grey-9;
+			border-color: @color-grey-9;
+			cursor: not-allowed;
+
+			&:hover {
+				background: @color-grey-9;
+			}
+		}
+
+		&:hover {
+			background: fade(@color-primary, 75%);	
+		}
+
+	}
+
+	input[type=submit],
+	input[type=button],
+	input[type=reset],
+	button {
+		.form-element-block & {
+			width: 100%;
+		}
+	}
