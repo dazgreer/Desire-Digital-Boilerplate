@@ -28,8 +28,8 @@ gulp.task('webserver', function() {
 /* Watch changes */
 gulp.task('watch', function () {
 	gulp.watch('src/styles/*.less' , ['less']);
-	gulp.watch('src/script/libs/*.js' , ['js-libs']);
 	gulp.watch('src/script/*.js' , ['js-core']);
+	gulp.watch('src/script/libs/*.js' , ['js-libs']);
 	gulp.watch('src/images/**/*.*' , ['images']);
 	gulp.watch('src/fonts/**/*.*' , ['fonts']);
 	gulp.watch('src/pages/**/*.html' , ['html']);
@@ -180,4 +180,4 @@ gulp.task('html', function(){
 
 
 /* Default task */
-gulp.task('default', ['fonts', 'watch', 'webserver']);
+gulp.task('default', ['fonts', 'watch', 'webserver', 'less', 'js-core', 'js-libs', 'images', 'html']);
