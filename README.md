@@ -1,1 +1,1 @@
-# Desire-Digital-Boilerplate
+# Desire Digital Boilerplate
