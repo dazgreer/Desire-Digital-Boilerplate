@@ -1,6 +1,7 @@
 
 /* Gulp requires */
 var gulp = require('gulp'),
+	browserSync = require('browser-sync'),
 	less = require('gulp-less'),
 	minifycss = require('gulp-minify-css'),
 	rename = require('gulp-rename'),
@@ -19,9 +20,12 @@ var gulp = require('gulp'),
 
 /* Create webserver */
 gulp.task('webserver', function() {
-	connect.server({
-		livereload: true
-	});
+    browserSync({
+        server: {
+        	livereload: true,
+            baseDir: "./dist/"
+        }
+    });
 });
 
 
